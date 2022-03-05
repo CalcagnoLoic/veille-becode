@@ -6,7 +6,7 @@ Veille n°1 : *Les attributs ARIA et l'accessibilité*
 
 Veille n°2 : *Les framework CSS*
 
-Veille n°3 : 
+Veille n°3 : *Les expressions régulières*
 
 Veille n°4 : 
 
