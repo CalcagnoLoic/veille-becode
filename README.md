@@ -8,7 +8,7 @@ Veille n°2 : *Les framework CSS*
 
 Veille n°3 : *Les expressions régulières*
 
-Veille n°4 : 
+Veille n°4 : *jQuery*
 
 Veille n°5 : 
 
