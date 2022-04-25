@@ -10,7 +10,7 @@ Veille n°3 : *Les expressions régulières*
 
 Veille n°4 : *Introduction à SQL*
 
-Veille n°5 : *Introduction à jQuery*
+Veille n°5 : *Les algorithmes du machine learning*
 
 Veille n°6 : *Introduction à Python*
 
