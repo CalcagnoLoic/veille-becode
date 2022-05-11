@@ -12,7 +12,7 @@ Veille n°4 : *Introduction à SQL*
 
 Veille n°5 : *Les algorithmes du machine learning*
 
-Veille n°6 : *Introduction à Python*
+Veille n°6 : *Introduction à Python - Live coding*
 
 Veille n°7 : *Live coding sur les algos du machine learning*
 
