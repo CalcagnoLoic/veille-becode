@@ -1,85 +1,70 @@
 # -*- coding: utf-8 -*-
+"""
+Created on Tue May 10 13:47:27 2022
+
+@author: Loïc
+"""
+
 ########################### FONCTION NATIVE + AIDE DES FONCTIONS ###############################
 
-print("hello world")
+print('test')
 
-############################### ASSIGNATION DE VARIABLES ###############################
+############################### ASSIGNATION DE VARIABLES #####################################
 
-## 1. Assignons 3 variables avec une valeur numérique,
-## une chaine et caractère et un booléen
+## 1. Assignons 3 variables avec une valeur numérique, une chaine de caractère et un booléen
 
-x = 5
-y = "coucou"
-z = True
+nombre = 25
+string = 'test'
+booleen = True
 
-type(x)
-type(y)
-type(z)
+## 2. Concaténons 2 chaines de caractères (+)
 
-## 2. Concaténons 2 chaines de caractères
-
-prenom = "Loïc"
-nom = "Calcagno"
-
+prenom = "loic"
+nom = "calcagno"
 print(prenom + " " + nom)
 
-############################ LES OBJETS DE STOCKAGE DE VARIABLE S###############################
 
-## 1. Créons une liste + print()
+############################ LES OBJETS DE STOCKAGE DE VARIABLES ###############################
 
-list = {"BeCode", 2022, True}
-print(list)
+## 1. Créons une liste 
 
-## 2. Créons un tuple + print()
+liste = ['loic', 29, True]
 
-tuple = ("becode", 2022, True)
-nom, annee, code = tuple
+## 2. Créons un tuple 
 
-print(nom)
-print(annee)
-print(code)
+tuple = ('loic', 29, True)
 
-## 3. Créons un dictionnaire + print()
+## 3. Créons un dictionnaire
 
-langage = {'front':'HTML', 'back':'PHP', 'framework':'Laravel'}
-langage2 = dict(front='HTML', back='PHP', framework='Laravel')
+# var = {'key':'value'}
+# var = dict(key="value")
 
-print(langage['back'])
+dico = dict(front = 'html', back = 'php', framework = 'laravel')
+
 
 ############################### LES BOUCLES CONDITIONNELLES ###############################
 
 ## 1. Une boucle if..elif..else
 
 x = 100
-
 if x < 100:
-    print('La variable est inférieure à 100')
-elif x == 100:
-    print('La variable est égale à 100')
-else :
-    print('La variable est supérieure à 100')
-    
-## 2. L'opérateur d'appartenance dans la boucle if
-
-langage_programmation = ["python", "R", "SQL", "PHP"]
-
-if "HTML" in langage_programmation:
-    print("HTML est présent")
+    print('x est inférieur à 100')
+elif x > 100:
+    print('x est supérieur à 100')
 else:
-    print("HTML n'est pas présent dans la liste")
-    
-## 3. La boucle while
+    print('x est égal à 100')
+
+## 2. La boucle while
 
 x = 0
-while x < 5:
+while x <5 :
     print(x)
-    x+=1
-    
-## 4. La boucle for
+    x += 1
 
-langage_programmation = ["python", "R", "SQL", "PHP"]
-for i in langage_programmation:
-    print(i)
+## 3. La boucle for /!\ opérateur d'appartenance (in)
+langages= ["php", 'r', "sql", "python"]
+for elem in langages:
+    print(elem)
 
 
 ############################### L'ECRITURE DE FONCTIONS ###############################
@@ -87,77 +72,56 @@ for i in langage_programmation:
 ## 1. Créons une fonction somme avec 2 arguments
 
 def somme(x,y):
-    print(x+y)
+    print("la somme vaut: ", x + y)
 
-somme(1,2)
+somme(1,5)
 
-## 2. Créons une fonction somme utilisant un nombre 
-## arbitraire d'argument et utilisant un tuple
+## 2. Créons une fonction somme utilisant un nombre **arbitraire** d'argument et utilisant 
+##un tuple (* => tuple)
 
 def somme(*args):
     s = 0
     for n in args:
-        s += n
+        s += n 
         print("La somme vaut : ", s)
+        
+somme(1,5,8,3,8,92,6,48,59,48)
 
-somme(15, 19, 145, 1, 42)
-
-## 3. Créons une fonction somme utilisant un nombre 
-## arbitraire d'argument et utilisant un dictionnaire
+## 3. Créons une fonction presentation utilisant un nombre **arbitraire** d'argument et 
+##utilisant un dictionnaire (** => dictionnaire)
 
 def presentation(**kwargs):
-    for i, j in kwargs.items():
-        print(i,j)
+    for key, value in kwargs.items():
+        print("la clé : ", key, "/ la valeur: ", value)
         
-presentation(Prénom='Loïc', age=29, ville='La Louvière')
+presentation(front = 'html', back = 'php', framework = 'laravel', front2 = 'css')
 
-## 4. Utilisons la méthode *args sur une fonction ayant un nombre défini d'arguments
 
-def somme(x,y):
-    print(x+y)
-
-s=[1,2]
-somme(*s)
-
-############################### LA PROGRAMMATION ORIENTE OBJET###############################
+############################### LA PROGRAMMATION ORIENTE OBJET ###############################
 
 
 ## 1. Créons une classe utilisateur prennant comme argument prénom et âge.
 ## Le prénom doit être visible via une méthode getter
-class Utilisateur:
+
+class Utilisateur():
     def __init__(self, prenom, age):
         self.prenom = prenom
         self.age = age
-    
+        
     def getName(self):
-        print("Salut, je suis", self.prenom)
-    
-moi = Utilisateur('Loïc', 29)
+        print("Je suis ", self.prenom)
+        
+moi = Utilisateur('loic', 29)
 moi.getName()
 
-## 2. Créons une classe utilisateur prennant comme argument prénom et âge.
+## 2. Créons une classe presentation prennant comme argument prénom et âge.
 ## Le prénom et l'âge doit être visible via une méthode getter
 
-class Utilisateur:
-    def __init__(self, prenom, age):
-        self.prenom = prenom
-        self.age = age
-    
-    def getName(self):
-        print("Salut, je suis", self.prenom)
-        
 class Presentation(Utilisateur):
     def getPresentation(self):
-        print("Salut, je suis", self.prenom, "et j'ai", self.age)
+        print("Je suis ", self.prenom, "et j'ai", self.age, "ans")
+        
+moi2 = Presentation('loic', 29)
+moi2.getPresentation()
 
-moi = Presentation('Loïc', 29)
-moi.getPresentation()
 
-############################### L'IMPORT DE MODULES ###############################
-
-import matplotlib.pyplot as plt
-x = [1, 2, 2, 3, 4, 4, 4, 4, 4, 5, 5]
-plt.hist(x, range = (0, 5), bins = 5, color = 'red', edgecolor='white')
-plt.xlabel('valeurs')
-plt.ylabel('nombres')
-plt.title('Exemple d\' histogramme simple')
