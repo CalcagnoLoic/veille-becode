@@ -16,4 +16,4 @@ Veille n°6 : *Introduction à Python - Live coding*
 
 Veille n°7 : *Live coding sur les algos du machine learning*
 
-Workshop
+[Workshop](https://github.com/CalcagnoLoic/workshop_python_django)
